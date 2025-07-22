@@ -1,0 +1,106 @@
+@use "../var" as v;
+
+.header {
+  width: 100%;
+  padding: 16px 0;
+  position: relative;
+  z-index: 10;
+
+  &-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &__list {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      & > li {
+
+        & > a {
+          color: v.$first-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          transition: v.$tr;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 0 20px;
+        }
+      }
+    }
+
+    &__link_logo {
+      filter: brightness(1000%) contrast(1000%);
+
+      @media (max-width: 768px) {
+        max-width: 70%;
+      }
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    .header-menu__link.header-menu__link_logo {
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+    }
+
+    &__link_lk:hover {
+      transition: v.$tr;
+      text-decoration: none;
+    }
+
+    .header-menu__link.header-menu__link_lk {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.burger-menu {
+  width: 23px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: 30px;
+  //  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  & span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    transition: background-color v.$tr;
+    background-color: v.$btn-first-color;
+
+    @media (max-width: 768px) {
+      background-color: v.$first-color;
+    }
+  }
+
+  &:hover {
+    & span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      transition: background-color v.$tr;
+      background-color: v.$hover-btn-color;
+    }
+  }
+}

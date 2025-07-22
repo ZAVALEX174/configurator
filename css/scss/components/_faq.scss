@@ -1,0 +1,63 @@
+@use "../var" as v;
+
+.faq {
+  width: 100%;
+  min-height: 620px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    width: 100%;
+    font-size: clamp(1rem, 0.8875rem + 0.5625vw, 1.5625rem);
+    color: v.$first-color;
+    text-align: center;
+    margin-bottom: 40px;
+
+    & p {
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-align: center;
+    color: v.$first-color;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-size: clamp(1.5rem, 1.1125rem + 1.9375vw, 3.4375rem);
+    font-weight: 600;
+    transition: opacity v.$tr;
+
+    &:hover {
+      transition: opacity v.$tr;
+      opacity: 0.7;
+    }
+  }
+}

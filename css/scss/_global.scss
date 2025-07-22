@@ -1,0 +1,112 @@
+@use "./var" as v;
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  //  border: 1px solid red;
+}
+
+html {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: v.$first-font, sans-serif;
+  min-height: 100vh;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color v.$tr;
+  line-height: 1.15;
+}
+
+a {
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  font-size: 16px;
+  color: v.$first-color;
+  text-decoration: none;
+  padding: 20px 30px;
+  font-weight: 600;
+  transition: background-color v.$tr;
+
+  &:hover {
+    transition: background-color v.$tr;
+  }
+}
+
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  & .button__register {
+    background-color: v.$btn-first-color;
+
+    &:hover {
+      background-color: v.$hover-btn-color;
+    }
+  }
+
+  & .button__to-try {
+    background-color: v.$btn-second-color;
+
+    &:hover {
+      background-color: v.$hover-btn-color;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.h1 {
+  font-size: 2rem;
+}
+
+.h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 1.1125rem + 1.9375vw, 3.4375rem);
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: v.$first-color;
+
+  &__gray {
+    color: v.$second-color;
+  }
+}

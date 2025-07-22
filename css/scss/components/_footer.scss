@@ -1,0 +1,14 @@
+@use "../var" as v;
+
+.footer {
+  width: 100%;
+  background-color: v.$footer-bg-color;
+  padding: 60px 0;
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: v.$third-color;
+  }
+}

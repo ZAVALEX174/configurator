@@ -1,0 +1,65 @@
+@use "../var" as v;
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  margin-top: -90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px;
+
+  &-wrapper {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      color: v.$first-color;
+      text-align: center;
+      margin-bottom: auto;
+
+      & > span {
+        display: block;
+        width: 100%;
+        font-size: 25px;
+        font-weight: 400;
+        margin-top: 20px;
+      }
+    }
+
+    &__subtitle {
+      width: 100%;
+      max-width: 530px;
+      text-align: center;
+      color: v.$first-color;
+      margin-bottom: 30px;
+
+      & p {
+        font-size: inherit;
+        font-family: inherit;
+      }
+    }
+
+  }
+
+  & > picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}

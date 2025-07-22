@@ -1,0 +1,33 @@
+@use "../var" as v;
+
+.contacts {
+  width: 100%;
+  padding: 60px 0;
+
+  &__wrapper-body {
+
+    &-desc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      color: v.$second-color;
+
+      & p, a {
+        font-size: inherit;
+        color: inherit;
+      }
+
+      & a {
+        text-decoration: none;
+        transition: color v.$tr;
+
+        &:hover {
+          transition: color v.$tr;
+          color: v.$third-color;
+        }
+      }
+    }
+  }
+}
